@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Course Learning Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            padding-top: 56px;
+            background-color: #cdcccc;
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 70px;
+            }
+        }
+
+        .navbar {
+            background-color: #3498db;
+            color: #ffffff;
+            border-bottom: 2px solid #2980b9;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: #ecf0f1;
+            font-weight: bold;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ecf0f1;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            background-color: #a19d9d;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #27ae60;
+        }
+
+        .navbar-nav .nav-item.active .nav-link {
+            font-weight: bold;
+        }
+
+        .mt-3 {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h4 {
+            color: #2c3e50;
+        }
+
+        .video-player,
+        .audio-player {
+            background-color: #a2e6c5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .video-player h4,
+        .audio-player h4 {
+            color: #0085f9;
+        }
+
+        .video-player video,
+        .audio-player audio {
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .course-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .course-section h2 {
+            color: #e74c3c;
+        }
+
+        .course-section .card {
+            background-color: #ecf0f1;
+            margin-top: 10px;
+        }
+
+        .course-section .card-body {
+            color: #34495e;
+        }
+
+        .mt-5 {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .progress {
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background-color: #3dc073;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" data-lang="home">Learning Platform</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-lang="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section1" data-lang="section1">Section 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section2" data-lang="section2">Section 2</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="mt-3">
+            <label for="languageSelect" data-lang="selectLanguage">Select Language:</label>
+            <select id="languageSelect" class="form-control" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+            </select>
+        </div>
+
+        <div id="section1" class="course-section mt-4">
+            <h2 data-lang="section1">Section 1</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" onchange="markSubsectionComplete(1, 1)">
+                            <span></span>
+                        </label>
+                        Subsection 1.1
+                    </h5>
+                    <p class="card-text" data-lang="subsectionContent">Content for Subsection 1.1 goes here.</p>
+
+                    <div class="video-player mt-3">
+                        <h4 data-lang="videoPlayer">Video Player</h4>
+                        <video controls>
+                            <source
+                                src="Y2meta.app - Nature Beautiful short video 720p HD.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="audio-player mt-3">
+                        <h4 data-lang="audioPlayer">Audio Player</h4>
+                        <audio controls>
+                            <source
+                                src="Game Of Thrones Ringtone скачать - MobCup.Com.Co.mp3" type="audio/mp3">
+                        </audio>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" onchange="markSubsectionComplete(1, 2)">
+                            <span></span>
+                        </label>
+                        Subsection 1.2
+                    </h5>
+                    <p class="card-text" data-lang="subsectionContent">Content for Subsection 1.2 goes here.</p>
+
+                    <div class="video-player mt-3">
+                        <h4 data-lang="videoPlayer">Video Player</h4>
+                        <video controls>
+                            <source
+                                src="Y2meta.app - Nature Beautiful short video 720p HD.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="audio-player mt-3">
+                        <h4 data-lang="audioPlayer">Audio Player</h4>
+                        <audio controls>
+                            <source
+                                src="Game Of Thrones Ringtone скачать - MobCup.Com.Co.mp3" type="audio/mp3">
+                        </audio>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="section2" class="course-section mt-4">
+            <h2 data-lang="section2">Section 2</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" onchange="markSubsectionComplete(2, 1)">
+                            <span></span>
+                        </label>
+                        Subsection 2.1
+                    </h5>
+                    <p class="card-text" data-lang="subsectionContent">Content for Subsection 2.1 goes here.</p>
+
+                    <div class="video-player mt-3">
+                        <h4 data-lang="videoPlayer">Video Player</h4>
+                        <video controls>
+                            <source
+                                src="Y2meta.app - Nature Beautiful short video 720p HD.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="audio-player mt-3">
+                        <h4 data-lang="audioPlayer">Audio Player</h4>
+                        <audio controls>
+                            <source
+                                src="Game Of Thrones Ringtone скачать - MobCup.Com.Co.mp3" type="audio/mp3">
+                        </audio>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" onchange="markSubsectionComplete(2, 2)">
+                            <span></span>
+                        </label>
+                        Subsection 2.2
+                    </h5>
+                    <p class="card-text" data-lang="subsectionContent">Content for Subsection 2.2 goes here.</p>
+
+                    <div class="video-player mt-3">
+                        <h4 data-lang="videoPlayer">Video Player</h4>
+                        <video controls>
+                            <source
+                                src="Y2meta.app - Nature Beautiful short video 720p HD.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="audio-player mt-3">
+                        <h4 data-lang="audioPlayer">Audio Player</h4>
+                        <audio controls>
+                            <source
+                                src="Game Of Thrones Ringtone скачать - MobCup.Com.Co.mp3" type="audio/mp3">
+                        </audio>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h4 data-lang="progressTracking">Progress Tracking</h4>
+            <div class="progress">
+                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function changeLanguage() {
+            var selectedLanguage = document.getElementById("languageSelect").value;
+            updateLanguage(selectedLanguage);
+        }
+
+        function updateLanguage(language) {
+            var languageElements = document.querySelectorAll('[data-lang]');
+
+            languageElements.forEach(function (element) {
+                var key = element.getAttribute('data-lang');
+                element.innerHTML = languages[language][key];
+            });
+        }
+
+        var languages = {
+            'en': {
+                'home': 'Home',
+                'section1': 'Section 1',
+                'section2': 'Section 2',
+                'selectLanguage': 'Select Language:',
+                'subsectionContent': 'Content for Subsection goes here.',
+                'videoPlayer': 'Video Player',
+                'audioPlayer': 'Audio Player',
+                'progressTracking': 'Progress Tracking',
+            },
+            'fr': {
+                'home': 'Accueil',
+                'section1': 'Section 1',
+                'section2': 'Section 2',
+                'selectLanguage': 'Choisir la langue :',
+                'subsectionContent': 'Contenu de la sous-section va ici.',
+                'videoPlayer': 'Lecteur vidéo',
+                'audioPlayer': 'Lecteur audio',
+                'progressTracking': 'Suivi de progression',
+            }
+        };
+
+        function updateProgress() {
+            var progressBar = document.getElementById("progressBar");
+            var currentProgress = parseInt(progressBar.style.width) || 0;
+            if (currentProgress < 100) {
+                currentProgress += 20;
+                progressBar.style.width = currentProgress + "%";
+                progressBar.setAttribute("aria-valuenow", currentProgress);
+            }
+        }
+
+        function markSubsectionComplete(sectionNumber, subsectionNumber) {
+            updateProgress();
+        }
+    </script>
+
+</body>
+
+</html>
